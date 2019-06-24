@@ -37,7 +37,7 @@ class InteractiveRecord
     SQL
     key, value = attribute.first
     binding.pry
-    DB[:conn].execute(sql, key.to_s, value)
+    DB[:conn].execute(sql)#, key.to_s, value)
   end
 
   def self.find_by_name(name)
