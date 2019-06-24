@@ -14,7 +14,7 @@ class InteractiveRecord
   def values_for_insert
     self.column_names.collect do |property, value|
       self.send("#{property}") unless self.send("#{property}").nil?
-    end.join(", ")
+    end.compact.join(", ")
   end
 
   def initialize(options = {})
