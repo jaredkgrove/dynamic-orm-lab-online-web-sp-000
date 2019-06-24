@@ -36,7 +36,7 @@ class InteractiveRecord
       SELECT * FROM #{self.table_name}
       WHERE #{key} = ?
     SQL
-    DB[:conn].execute(sql)#, key.to_s, value)
+    DB[:conn].execute(sql, value)#, key.to_s, value)
   end
 
   def self.find_by_name(name)
