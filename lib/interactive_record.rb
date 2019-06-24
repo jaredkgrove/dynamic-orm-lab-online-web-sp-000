@@ -36,6 +36,7 @@ class InteractiveRecord
       WHERE ? = ?
     SQL
     key, value = attribute.first
+    binding.pry
     DB[:conn].execute(sql, key.to_s, value)
   end
 
