@@ -4,6 +4,7 @@ require 'active_support/inflector'
 class InteractiveRecord
 
   def save
+    DB[:conn].results_as_hash = true
     sql = "INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (#{values_for_insert})"
 
      DB[:conn].execute(sql)
