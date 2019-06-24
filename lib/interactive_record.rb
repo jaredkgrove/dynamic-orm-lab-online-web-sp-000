@@ -1,6 +1,6 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
-require 'pry'
+
 class InteractiveRecord
 
   def table_name_for_insert
@@ -8,8 +8,7 @@ class InteractiveRecord
   end
 
   def col_names_for_insert
-    binding.pry
-    self.class.column_names
+    self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
   def initialize(options = {})
