@@ -31,12 +31,11 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute={})
+    key, value = attribute.first
     sql =<<-SQL
       SELECT * FROM #{self.table_name}
       WHERE name = "Susan"
     SQL
-    key, value = attribute.first
-    binding.pry
     DB[:conn].execute(sql)#, key.to_s, value)
   end
 
