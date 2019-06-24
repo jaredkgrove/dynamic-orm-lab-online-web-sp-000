@@ -4,7 +4,9 @@ require 'active_support/inflector'
 class InteractiveRecord
 
   def save
-
+    sql = <<-SQL 
+      INSERT INTO ?
+      
   end
 
   def table_name_for_insert
