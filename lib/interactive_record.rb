@@ -14,7 +14,7 @@ class InteractiveRecord
   def values_for_insert
     self.column_names.collect do |property, value|
       value
-    end
+    end.join(", ")
   end
 
   def initialize(options = {})
