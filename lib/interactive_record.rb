@@ -33,7 +33,7 @@ class InteractiveRecord
   def self.find_by(attribute={})
     sql =<<-SQL
       SELECT * FROM #{self.table_name}
-      WHERE ? = ?
+      WHERE name = "susan"
     SQL
     key, value = attribute.first
     binding.pry
