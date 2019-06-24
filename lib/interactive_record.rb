@@ -35,6 +35,8 @@ class InteractiveRecord
       SELECT * FROM #{self.table_name}
       WHERE name = ?
     SQL
+
+
   end
 
   def self.table_name
