@@ -34,7 +34,7 @@ class InteractiveRecord
     key, value = attribute.first
     sql =<<-SQL
       SELECT * FROM #{self.table_name}
-      WHERE #{key} = ?
+      WHERE #{key.to_s} = ?
     SQL
     DB[:conn].execute(sql, value)#, key.to_s, value)
   end
