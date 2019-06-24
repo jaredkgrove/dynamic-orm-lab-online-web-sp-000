@@ -11,8 +11,6 @@ class InteractiveRecord
     sql =<<-SQL
       PRAGMA table_info(#{self.table_name})
     SQL
-    DB[:conn].execute(sql).collect do |col|
-      col["name"]
-    end.compact
+    DB[:conn].execute(sql).collect{|col| col["name"]}.compact
   end
 end
