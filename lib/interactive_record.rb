@@ -9,9 +9,9 @@ class InteractiveRecord
   def self.column_names
     DB[:conn].results_as_hash= true
     sql =<<-SQL
-      PRAGMA table_info(?)
+      PRAGMA table_info(#{self.table_name})
     SQL
-    DB[:conn].execute(sql, self.table_name).collect do |col|
+    DB[:conn].execute(sql).collect do |col|
       col["name"]
     end.compact
   end
