@@ -12,8 +12,8 @@ class InteractiveRecord
   end
 
   def values_for_insert
-    self.column_names.each do |property, value|
-      self.send("#{property}=", values\)
+    self.column_names.collect do |property, value|
+      self.send("#{property}") unless self.send("#{property}").nil?
     end.join(", ")
   end
 
