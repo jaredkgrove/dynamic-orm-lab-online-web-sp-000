@@ -4,7 +4,9 @@ require 'active_support/inflector'
 class InteractiveRecord
 
   def initialize(options = {})
+    options.each do |propery, value|
 
+    end
   end
 
   def self.table_name
