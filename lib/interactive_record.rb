@@ -3,6 +3,10 @@ require 'active_support/inflector'
 
 class InteractiveRecord
 
+  def save
+
+  end
+
   def table_name_for_insert
     self.class.table_name
   end
