@@ -10,6 +10,8 @@ class InteractiveRecord
     sql =<<-SQL
       PRAGMA table_info(?)
     SQL
-    DB[:conn].execute(sql, self.table_name)
+    DB[:conn].execute(sql, self.table_name).collect do |col|
+      col["name"]
+    end.compact
   end
 end
