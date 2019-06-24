@@ -36,7 +36,7 @@ class InteractiveRecord
       WHERE ? = ?
     SQL
     key, value = attribute.first
-    DB[:conn].execute(sql, attribute)
+    DB[:conn].execute(sql, key, value)
   end
 
   def self.find_by_name(name)
