@@ -6,7 +6,7 @@ class InteractiveRecord
   def save
     sql = <<-SQL
       INSERT INTO ?
-
+    SQL
   end
 
   def table_name_for_insert
