@@ -13,7 +13,7 @@ class InteractiveRecord
 
   def values_for_insert
     self.class.column_names.collect do |property, value|
-      self.send("'#{property}'") unless self.send("#{property}").nil?
+      "#{self.send("#{property}")}' unless self.send("#{property}").nil?
     end.compact.join(", ")
   end
 
