@@ -11,6 +11,12 @@ class InteractiveRecord
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
+  def values_for_insert
+    self.column_names.collect do |property, value|
+      value
+    end
+  end
+
   def initialize(options = {})
     options.each do |property, value|
       self.send("#{property}=", value)
